@@ -1,0 +1,14 @@
+- name: Install Package
+  apt:
+    name:
+      - tmux
+
+- name: Configure Plugins
+  copy:
+    src: files/.tmux.conf
+    dest: /home/giorgio/.tmux.conf
+
+- name: Install TPM
+  git:
+    repo: https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    dest: /home/giorgio/.tmux/plugins/tpm

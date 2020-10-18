@@ -7,8 +7,13 @@
       apt: 
         update_cache: yes
       changed_when: False
-  
+    - name: ansible create directory
+      file:
+        path: /home/giorgio/.config
+        state: directory
+
+
   tasks:
     - include: tasks/users.yml
     - include: tasks/cron.yml
-    - include: tasks/packages.yml
+    - include: tasks/tmux.yml
