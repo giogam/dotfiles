@@ -1,0 +1,11 @@
+---
+
+mirrorlist_countries:
+  - IE
+  - IT
+
+st_patches:
+  - scrollback:
+      - st-scrollback
+
+#theme: dmg_blue
