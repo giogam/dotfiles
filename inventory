@@ -1,0 +1,3 @@
+[all]
+generic ansible_connection=local
+uninstall ansible_connection=local
