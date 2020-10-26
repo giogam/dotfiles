@@ -8,13 +8,13 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 HOSTS="$ROOT_DIR/hosts"
 # Main playbook
 PLAYBOOK="$ROOT_DIR/dotfiles.yml"
-
+# User to be created
 USERNAME="bald"
 
 # Installs ansible
 pacman -Syu --noconfirm ansible
 
 # Runs Ansible playbook using our user.
-ansible-playbook -i "$HOSTS" "$PLAYBOOK" --ask-become-pass --extra-vars "$USERNAME"
+ansible-playbook -i "$HOSTS" "$PLAYBOOK" --ask-become-pass --extra-vars "username=$USERNAME"
 
 exit 0
