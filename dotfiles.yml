@@ -2,5 +2,6 @@
   hosts: local
   roles:
     - role: user
-      tags:
-        - basic
+    - role: sudo
+    - role: xorg
+    
