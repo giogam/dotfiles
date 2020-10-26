@@ -1,0 +1,6 @@
+- name: Set Arch local workstation
+  hosts: local
+  roles:
+    - role: user
+      tags:
+        - basic
