@@ -11,8 +11,8 @@ PLAYBOOK="$ROOT_DIR/dotfiles.yml"
 # User to be created
 USERNAME="bald"
 
-# Installs ansible
-pacman -Syu --noconfirm ansible
+# Installs base dependencies
+pacman -Syu --noconfirm sudo git ansible
 
 # Runs Ansible playbook using our user.
 ansible-playbook -i "$HOSTS" "$PLAYBOOK" --ask-become-pass --extra-vars "username=$USERNAME"
