@@ -1,0 +1,33 @@
+---
+
+- name: Ensure required packages are installed
+  become: yes
+  pacman:
+    name: "{{ bspwm_packages }}"
+    state: latest
+    update_cache: yes
+
+- name: Create config directory
+  file:
+    group: "{{ username }}"
+    mode: 0755
+    owner: "{{ username }}"
+    path: "/home/{{ username }}/.config/bspwm"
+    state: directory
+
+- name: Create bspwm config file
+  template:
+    dest: "/home/{{ username }}/.config/bspwm/bspwmrc"
+    group: "{{ username }}"
+    mode: 0755
+    owner: "{{ username }}"
+    src: "bspwmrc.j2"
+
+- name: Add wallpapers
+  become: yes
+  copy:
+    dest: "/home/{{ username }}/.config"
+    group: "{{ username }}"
+    mode: 0644
+    owner: "{{ username }}"
+    src: "feh"
