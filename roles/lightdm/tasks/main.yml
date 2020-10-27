@@ -20,8 +20,8 @@
   - name: Clone theme
     become: yes
     git:
-      dest: '/usr/share/lightdm-webkit/themes/lightdm-webkit2-{{ theme }}'
-      repo: "https://github.com/davidmogar/lightdm-webkit2-{{ theme }}.git"
+      dest: '/usr/share/lightdm-webkit/themes/lightdm-webkit2-dmg_blue'
+      repo: "https://github.com/davidmogar/lightdm-webkit2-dmg_blue.git"
   
   - name: Create lightdm config file
     become: yes
