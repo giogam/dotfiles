@@ -5,3 +5,6 @@
     - role: sudo
     - role: xorg
     - role: lightdm
+    - role: gtk
+    - role: bspwm
+    - role: sxhkd
