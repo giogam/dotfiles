@@ -4,4 +4,4 @@
     - role: user
     - role: sudo
     - role: xorg
-    
+    - role: lightdm
