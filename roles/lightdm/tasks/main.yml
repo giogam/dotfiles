@@ -7,21 +7,21 @@
       state: latest
       update_cache: yes
   
-  - name: Create config and theme directories
-    become: yes
-    file:
-      mode: 0755
-      path: "{{ item }}"
-      state: directory
-    loop:
-      - '/etc/lightdm'
-      - '/usr/share/lightdm-webkit/themes'
+  #- name: Create config and theme directories
+  #  become: yes
+  #  file:
+  #    mode: 0755
+  #    path: "{{ item }}"
+  #    state: directory
+  #  loop:
+  #    - '/etc/lightdm'
+  #    - '/usr/share/lightdm-webkit/themes'
   
-  - name: Clone theme
-    become: yes
-    git:
-      dest: '/usr/share/lightdm-webkit/themes/lightdm-webkit2-dmg_blue'
-      repo: "https://github.com/davidmogar/lightdm-webkit2-dmg_blue.git"
+ # - name: Clone theme
+ #   become: yes
+ #   git:
+ #     dest: '/usr/share/lightdm-webkit/themes/lightdm-webkit2-dmg_blue'
+ #     repo: "https://github.com/davidmogar/lightdm-webkit2-dmg_blue.git"
   
   - name: Create lightdm config file
     become: yes

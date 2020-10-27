@@ -8,3 +8,4 @@
     - role: gtk
     - role: bspwm
     - role: sxhkd
+    - role: alacritty

@@ -9,10 +9,10 @@
   
   - name: Create sxhkd config file
     copy:
-      dest: "{{ user_home }}/.config"
-      group: "{{ user_id }}"
+      dest: "/home/{{ username }}/.config"
+      group: "{{ username }}"
       mode: 0655
-      owner: "{{ user_id }}"
+      owner: "{{ username }}"
       src: sxhkd
   
   - name: Add xdg profile unit
