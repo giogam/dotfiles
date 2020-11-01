@@ -36,3 +36,12 @@
       dest: '/etc/lightdm/lightdm-webkit2-greeter.conf'
       mode: 0644
       src: 'lightdm-webkit2-greeter.conf.j2'
+
+  - name: Add script to set screen resolution
+    become: yes
+    copy:
+      dest: "/usr/share/lightdm_setup_screen_resolution.sh"
+      group: root
+      mode: 0644
+      owner: root
+      src: lightdm_setup_screen_resolution.sh
