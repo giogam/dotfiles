@@ -1,0 +1,17 @@
+---
+
+- name: Ensure required packages are installed
+  become: yes
+  pacman:
+    name: "{{ node_packages }}"
+    state: latest
+    update_cache: yes
+
+- name: Install packages from AUR
+  include_role:
+    name: aur_install
+  loop: "{{ node_aur_packages }}"
+  vars:
+    aur_package:
+      name: "{{ item }}"
+

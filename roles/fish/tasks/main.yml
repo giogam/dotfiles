@@ -1,0 +1,8 @@
+---
+
+- name: Ensure fish is installed
+  become: yes
+  pacman:
+    name: "{{ fish_package_name }}"
+    state: latest
+    update_cache: yes

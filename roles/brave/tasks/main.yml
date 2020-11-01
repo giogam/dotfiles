@@ -1,0 +1,23 @@
+---
+# - name: Ensure dependencies are installed
+#   become: yes
+#   pacman:
+#     name: "{{ brave_dependencies }}"
+#     state: latest
+#     update_cache: yes
+  
+# - name: Ensure aur dependencies are installed
+#   include_role:
+#     name: aur_install
+#   loop: "{{ brave_aur_dependencies }}"
+#   vars:
+#     aur_package:
+#       name: "{{ item }}"
+
+- name: Ensure brave is installed
+  include_role:
+    name: aur_install
+  vars:
+    aur_package:
+      name: "{{ brave_package_name }}"
+

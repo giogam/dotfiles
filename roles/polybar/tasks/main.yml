@@ -1,0 +1,32 @@
+---
+
+- name: Ensure required packages are installed
+  become: yes
+  pacman:
+    name: "{{ polybar_packages }}"
+    state: latest
+    update_cache: yes
+
+- name: Install package from AUR
+  include_role:
+    name: aur_install
+  loop: "{{ polybar_aur_packages }}"
+  vars:
+    aur_package:
+      name: "{{ item }}"
+
+- name: Copy config files
+  copy:
+    dest: "/home/{{ username }}/.config"
+    group: "{{ username }}"
+    mode: 0755
+    owner: "{{ username }}"
+    src: polybar
+
+- name: Create symbolic link to theme
+  file:
+    dest: "/home/{{ username }}/.config/polybar/config"
+    group: "{{ username }}"
+    owner: "{{ username }}"
+    src: "/home/{{ username }}/.config/polybar/themes/movie"
+    state: link

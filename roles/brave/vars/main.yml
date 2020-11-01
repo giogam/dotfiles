@@ -1,0 +1,12 @@
+---
+brave_package_name: brave-bin
+
+# brave_dependencies: 
+#   - clang
+#   - gperf
+#   - jre-openjdk-headless
+
+# brave_aur_dependencies:
+#   - name: ncurses5-compat-libs
+#     key: C52048C0C0748FEE227D47A2702353E0F7E48EDB
+  

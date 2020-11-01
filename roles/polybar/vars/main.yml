@@ -1,0 +1,8 @@
+---
+polybar_aur_packages:
+  - polybar
+  - polybar-spotify
+
+polybar_packages:
+  - python-dbus
+  

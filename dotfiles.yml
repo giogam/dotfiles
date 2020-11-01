@@ -1,7 +1,8 @@
 - name: Set Arch local workstation
   hosts: local
   roles:
-    - role: user
+    - role: mirrorlist
+    - role: users
     - role: sudo
     - role: xorg
     - role: lightdm
@@ -9,3 +10,24 @@
     - role: bspwm
     - role: sxhkd
     - role: alacritty
+    - role: fonts
+    #- role: spotify
+    - role: polybar
+    - role: rofi
+    #- role: sound
+    #- role: cursor
+    #- role: dunst
+    #- role: neofetch
+    #- role: neovim
+    #- role: nodejs
+    #- role: vscode
+    #- role: bitwarden
+    #- role: brave
+    #- role: fish
+    #- role: tmux
+    #- role: discord
+
+
+
+
+

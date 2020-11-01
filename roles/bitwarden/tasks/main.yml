@@ -1,0 +1,9 @@
+---
+
+- name: Ensure bitwarden is installed
+  include_role:
+    name: aur_install
+  vars:
+    aur_package:
+      name: "{{ bitwarden_package_name }}"
+

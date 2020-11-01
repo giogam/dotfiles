@@ -1,4 +1,10 @@
 ---
+  - name: Create aur_builder user
+    user:
+      name: aur_builder
+      group: wheel
+      system: yes
+
   - name: Add user
     user:
       name: "{{ username }}"

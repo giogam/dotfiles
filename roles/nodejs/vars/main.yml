@@ -1,0 +1,8 @@
+---
+node_packages:
+  - nodejs
+  - npm
+
+node_aur_packages:
+  - nvm
+  

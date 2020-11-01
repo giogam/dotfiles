@@ -1,0 +1,5 @@
+---
+aur_required_packages:
+  - base-devel
+
+keyserver: pool.sks-keyservers.net

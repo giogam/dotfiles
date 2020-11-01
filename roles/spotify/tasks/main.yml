@@ -1,0 +1,35 @@
+---
+
+- name: Ensure required aur packages are installed
+  include_role:
+    name: aur_install
+  loop: "{{ spotify_aur_packages }}"
+  vars:
+    aur_package: "{{ item }}"
+
+- name: Generate spicetify config
+  become: yes
+  become_user: "{{ username }}"
+  command: 'spicetify'
+
+- name: Create backup and enable dev tool
+  become: yes
+  become_user: "{{ username }}"
+  command: 'spicetify backup apply enable-devtool'
+
+- name: Clone theme
+  git:
+    dest: "/home/{{ username }}/.config/spicetify/Themes/dmg_blue"
+    repo: "https://github.com/davidmogar/spicetify-dmg_blue.git"
+
+- name: Update config file
+  become: yes
+  template:
+    dest: "/home/{{ username }}/.config/spicetify/config.ini"
+    mode: 0644
+    src: 'config.ini.j2'
+
+- name: Apply theme
+  become: yes
+  become_user: "{{ username }}"
+  command: 'spicetify update'

@@ -1,0 +1,8 @@
+---
+
+- name: Ensure discord is installed
+  become: yes
+  pacman:
+    name: "{{ discord_package_name }}"
+    state: latest
+    update_cache: yes

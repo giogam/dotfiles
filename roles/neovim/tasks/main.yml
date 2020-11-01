@@ -1,0 +1,32 @@
+---
+
+- name: Ensure required packages are installed
+  become: yes
+  pacman:
+    name: "{{ neovim_package_name }}"
+    state: latest
+    update_cache: yes
+
+- name: Create neovim config file
+  copy:
+    dest: "/home/{{ username }}/.config"
+    group: "{{ username }}"
+    mode: 0644
+    owner: "{{ username }}"
+    src: nvim
+
+- name: Ensure autoload path exist
+  file:
+    group: "{{ username }}"
+    mode: 0755
+    owner: "{{ username }}"
+    path: "/home/{{ username }}/.local/share/nvim/site/autoload"
+    state: directory
+
+- name: Download vim-plug
+  get_url:
+    dest: "/home/{{ username }}/.local/share/nvim/site/autoload/plug.vim"
+    group: "{{ username }}"
+    mode: 0644
+    owner: "{{ username }}"
+    url: "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"

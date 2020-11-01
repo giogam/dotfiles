@@ -1,0 +1,24 @@
+---
+
+- name: Ensure required packages are installed
+  become: yes
+  pacman:
+    name: "{{ dunst_packages }}"
+    state: latest
+    update_cache: yes
+
+- name: Create config directory
+  file:
+    group: "{{ username }}"
+    mode: 0755
+    owner: "{{ username }}"
+    path: "/home/{{ username }}/.config/dunst"
+    state: directory
+
+- name: Create dunstrc config file
+  template:
+    dest: "/home/{{ username }}/.config/dunst/dunstrc"
+    group: "{{ username }}"
+    mode: 0644
+    owner: "{{ username }}"
+    src: "dunstrc.j2"
