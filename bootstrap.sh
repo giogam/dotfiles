@@ -12,7 +12,7 @@ PLAYBOOK="$ROOT_DIR/dotfiles.yml"
 USERNAME="bald"
 
 # Installs base dependencies
-pacman -Syu --noconfirm sudo git ansible
+pacman -Syu --noconfirm sudo xclip git ansible
 
 # Runs Ansible playbook using our user.
 ansible-playbook -i "$HOSTS" "$PLAYBOOK" --ask-become-pass --extra-vars "username=$USERNAME"

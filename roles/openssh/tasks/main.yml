@@ -1,0 +1,8 @@
+---
+
+- name: Ensure openssh is installed
+  become: yes
+  pacman:
+    name: "{{ openssh_package_name }}"
+    state: latest
+    update_cache: yes

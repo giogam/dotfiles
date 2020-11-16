@@ -12,6 +12,7 @@
     - role: alacritty
     - role: fonts
     #- role: spotify
+    - role: openssh
     - role: polybar
     - role: rofi
     #- role: sound
