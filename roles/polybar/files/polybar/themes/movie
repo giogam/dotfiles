@@ -16,13 +16,13 @@
 ;=============================================================
 
 [colors]
-background = #111
+background = #191919
 background-alt = #444
-foreground = #ddd
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+foreground = #f8f8f2
+foreground-alt = #444
+primary = #ffb86c
+secondary = #ff5555
+alert = #ff5555
 accent = #4bc98a
 
 [bar/top]
@@ -38,10 +38,10 @@ underline-size = 0
 background = ${colors.background}
 foreground = ${colors.foreground}
 line-size =  0
-line-color = #f00
+line-color = #ff5555
 
 border-size = 0px
-border-color = #00000000
+border-color = #191919
 
 padding-left = 0
 padding-right = 2
@@ -104,22 +104,22 @@ format = <label> <ramp-coreload>
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 3
-ramp-coreload-0-foreground = #55aa55
+ramp-coreload-0-foreground = #4bc98a
 ramp-coreload-1 = ▂
 ramp-coreload-1-font = 3
-ramp-coreload-1-foreground = #55aa55
+ramp-coreload-1-foreground = #4bc98a
 ramp-coreload-2 = ▃
 ramp-coreload-2-font = 3
-ramp-coreload-2-foreground = #55aa55
+ramp-coreload-2-foreground = #4bc98a
 ramp-coreload-3 = ▄
 ramp-coreload-3-font = 3
-ramp-coreload-3-foreground = #55aa55
+ramp-coreload-3-foreground = #4bc98a
 ramp-coreload-4 = ▅
 ramp-coreload-4-font = 3
-ramp-coreload-4-foreground = #f5a70a
+ramp-coreload-4-foreground = #ffb86c
 ramp-coreload-5 = ▆
 ramp-coreload-5-font = 3
-ramp-coreload-5-foreground = #f5a70a
+ramp-coreload-5-foreground = #ffb86c
 ramp-coreload-6 = ▇
 ramp-coreload-6-font = 3
 ramp-coreload-6-foreground = #ff5555
@@ -134,9 +134,9 @@ format = <label> <bar-used>
 label = 
 
 bar-used-width = 20
-bar-used-foreground-0 = #55aa55
-bar-used-foreground-1 = #55aa55
-bar-used-foreground-2 = #fba922
+bar-used-foreground-0 = #4bc98a
+bar-used-foreground-1 = #4bc98a
+bar-used-foreground-2 = #ffb86c
 bar-used-foreground-3 = #ff5555
 bar-used-indicator = ▅
 bar-used-indicator-font = 3
@@ -172,7 +172,7 @@ format-volume = <ramp-volume>
 
 label-muted = ﱝ
 label-muted-font = 4
-label-muted-foreground = #666
+label-muted-foreground = #444444
 
 ramp-volume-0 = 
 ramp-volume-0-font = 4
