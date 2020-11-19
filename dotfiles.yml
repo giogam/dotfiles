@@ -25,7 +25,7 @@
     #- role: bitwarden
     #- role: brave
     #- role: fish
-    #- role: tmux
+    - role: tmux
     #- role: discord
 
 
