@@ -8,6 +8,8 @@
     update_cache: yes
 
 - name: "Clone the git repo"
+  become: yes
+  become_user: "{{ username }}"
   git:
     repo: "https://github.com/tmux-plugins/tpm"
     dest: "/home/{{ username }}/.tmux/plugins/tpm"
@@ -16,7 +18,7 @@
 
 - name: Copy config file
   copy:
-    dest: "/home/{{ username }}/.config"
+    dest: "/home/{{ username }}/.tmux.conf"
     group: "{{ username }}"
     mode: 0655
     owner: "{{ username }}"
