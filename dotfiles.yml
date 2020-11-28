@@ -11,22 +11,22 @@
     - role: sxhkd
     - role: alacritty
     - role: fonts
-    #- role: spotify
+    - role: spotify
     - role: openssh
     - role: polybar
     - role: rofi
-    #- role: sound
-    #- role: cursor
-    #- role: dunst
-    #- role: neofetch
-    #- role: neovim
-    #- role: nodejs
-    #- role: vscode
-    #- role: bitwarden
-    #- role: brave
+    - role: sound
+    - role: cursor
+    - role: dunst
+    - role: neofetch
+    - role: neovim
+    - role: nodejs
+    - role: vscode
+    - role: bitwarden
+    - role: brave
     - role: fish
     - role: tmux
-    #- role: discord
+    - role: discord
 
 
 
