@@ -6,3 +6,11 @@
     name: "{{ fish_package_name }}"
     state: latest
     update_cache: yes
+
+- name: Install Fisher plugin manager
+  become: yes
+  become_user: "{{ username }}"
+  get_url:
+    url: "https://git.io/fisher"
+    dest: "/home/{{ username }}/.config/fish/functions/fisher.fish"
+    mode: "0644"
