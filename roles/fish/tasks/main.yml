@@ -1,11 +1,11 @@
 ---
 
-- name: Ensure fish is installed
-  become: yes
-  pacman:
-    name: "{{ fish_package_name }}"
-    state: latest
-    update_cache: yes
+# - name: Ensure fish is installed
+#   become: yes
+#   pacman:
+#     name: "{{ fish_package_name }}"
+#     state: latest
+#     update_cache: yes
 
 - name: Ensure aur directory exists
   become: yes
@@ -22,3 +22,8 @@
     url: "https://git.io/fisher"
     dest: "/home/{{ username }}/.config/fish/functions/fisher.fish"
     mode: "0644"
+
+- name: Unlock password and set it to empty
+  become: yes
+  become_user: "{{ username }}"
+  command: fisher install rafaelrinaldi/pure

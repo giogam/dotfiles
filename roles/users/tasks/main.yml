@@ -9,7 +9,7 @@
     user:
       name: "{{ username }}"
       groups: wheel
-      shell: /bin/bash
+      shell: /usr/bin/fish
       append: yes
   
   - name: Allow to change expired passwords on login

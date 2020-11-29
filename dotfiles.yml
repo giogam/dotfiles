@@ -3,6 +3,7 @@
   roles:
     - role: mirrorlist
     - role: users
+    - role: fish
     - role: sudo
     - role: xorg
     - role: lightdm
@@ -24,7 +25,6 @@
     - role: vscode
     - role: bitwarden
     - role: brave
-    - role: fish
     - role: tmux
     - role: discord
 
