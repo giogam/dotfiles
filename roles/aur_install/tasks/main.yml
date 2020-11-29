@@ -33,14 +33,6 @@
       command: "gpg --keyserver {{ keyserver }} --recv-keys {{ aur_package.key }}"
       when: aur_package.key is defined
 
-    - name: Ensure aur directory exists
-      become: yes
-      file:
-        mode: 0755
-        owner: aur_builder
-        path: "{{ aur_builder_home.stdout }}/tmp"
-        state: directory
-
     - name: Clone aur repository
       become: yes
       become_user: aur_builder
@@ -52,9 +44,3 @@
       become: yes
       become_user: aur_builder
       command: "chdir={{ aur_builder_home.stdout }}/.aur/{{ aur_package.name }} /usr/bin/makepkg -si --noconfirm"
-
-    - name: Ensure build directory is removed
-      become: yes
-      file:
-        path: "{{ aur_builder_home.stdout }}/tmp"
-        state: absent

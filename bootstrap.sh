@@ -12,9 +12,16 @@ PLAYBOOK="$ROOT_DIR/dotfiles.yml"
 USERNAME="bald"
 
 # Installs base dependencies
-pacman -Syu --noconfirm sudo xclip git ansible
+pacman -Syu --noconfirm --needed sudo xclip git ansible
+
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd
+
+yay -S --noconfirm ansible-aur-git
 
 # Runs Ansible playbook using our user.
-ansible-playbook -i "$HOSTS" "$PLAYBOOK" --ask-become-pass --extra-vars "username=$USERNAME"
+#ansible-playbook -i "$HOSTS" "$PLAYBOOK" --ask-become-pass --extra-vars "username=$USERNAME"
 
 exit 0
