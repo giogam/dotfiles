@@ -7,6 +7,14 @@
     state: latest
     update_cache: yes
 
+- name: Ensure aur directory exists
+  become: yes
+  file:
+    mode: 0755
+    owner: "{{ username }}"
+    path: "/home/{{ username }}/.config/fish/functions"
+    state: directory
+  
 - name: Install Fisher plugin manager
   become: yes
   become_user: "{{ username }}"
