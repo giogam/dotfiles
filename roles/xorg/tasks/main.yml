@@ -1,8 +1,8 @@
 ---
   - name: Ensure required packages are installed
     become: yes
-    pacman:
-      name: "{{ xorg_packages + [ xorg_driver ] }}"
+    package:
+      name: xorg_packages
       state: latest
       update_cache: yes
   

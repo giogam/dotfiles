@@ -8,12 +8,10 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 HOSTS="$ROOT_DIR/hosts"
 # Main playbook
 PLAYBOOK="$ROOT_DIR/dotfiles.yml"
-# User to be created
-USERNAME="bald"
 
 # Installs base dependencies
-pacman -Syu --noconfirm --needed fish sudo xclip git ansible
-
+sudo apt update
+sudo apt install ansible
 # Runs Ansible playbook using our user.
 ansible-playbook -i "$HOSTS" "$PLAYBOOK" --ask-become-pass --extra-vars "username=$USERNAME"
 

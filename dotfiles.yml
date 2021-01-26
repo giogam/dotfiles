@@ -1,33 +1,32 @@
-- name: Set Arch local workstation
+- name: Set Ubuntu local workstation
   hosts: local
   roles:
-    - role: mirrorlist
-    - role: users
-    - role: fish
-    - role: sudo
     - role: xorg
-    - role: lightdm
-    - role: gtk
-    - role: bspwm
-    - role: sxhkd
-    - role: alacritty
-    - role: fonts
-    - role: spotify
-    - role: openssh
-    - role: polybar
-    - role: rofi
-    - role: sound
-    - role: cursor
-    - role: dunst
-    - role: neofetch
-    - role: neovim
-    - role: nodejs
-    - role: vscode
-    - role: bitwarden
-    - role: brave
-    - role: tmux
-    - role: discord
-
+    #- role: mirrorlist
+    #- role: users
+    #- role: fish
+    #- role: sudo
+    #- role: lightdm
+    #- role: gtk
+    #- role: bspwm
+    #- role: sxhkd
+    #- role: alacritty
+    #- role: fonts
+    #- role: spotify
+    #- role: openssh
+    #- role: polybar
+    #- role: rofi
+    #- role: sound
+    #- role: cursor
+    #- role: dunst
+    #- role: neofetch
+    #- role: neovim
+    #- role: nodejs
+    #- role: vscode
+    #- role: bitwarden
+    #- role: brave
+    #- role: tmux
+    #- role: discord
 
 
 
