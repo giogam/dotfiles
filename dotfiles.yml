@@ -6,7 +6,7 @@
     #- role: users
     #- role: fish
     #- role: sudo
-    #- role: lightdm
+    - role: lightdm
     #- role: gtk
     #- role: bspwm
     #- role: sxhkd

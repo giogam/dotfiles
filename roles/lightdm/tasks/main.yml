@@ -2,20 +2,20 @@
 
   - name: Ensure required packages are installed
     become: yes
-    pacman:
+    package:
       name: "{{ lightdm_packages }}"
       state: latest
       update_cache: yes
   
-  #- name: Create config and theme directories
-  #  become: yes
-  #  file:
-  #    mode: 0755
-  #    path: "{{ item }}"
-  #    state: directory
-  #  loop:
-  #    - '/etc/lightdm'
-  #    - '/usr/share/lightdm-webkit/themes'
+  - name: Create config and theme directories
+    become: yes
+    file:
+      mode: 0755
+      path: "{{ item }}"
+      state: directory
+    loop:
+      - '/etc/lightdm'
+      - '/usr/share/lightdm-webkit/themes'
   
  # - name: Clone theme
  #   become: yes
@@ -23,6 +23,17 @@
  #     dest: '/usr/share/lightdm-webkit/themes/lightdm-webkit2-dmg_blue'
  #     repo: "https://github.com/davidmogar/lightdm-webkit2-dmg_blue.git"
   
+
+
+  - name: Unarchive a file that needs to be downloaded (added in 2.0)
+    ansible.builtin.unarchive:
+      src: https://github.com/manilarome/lightdm-webkit2-theme-glorious/releases/download/v2.0.5/lightdm-webkit2-theme-glorious-2.0.5.tar.gz
+      dest: /usr/share/lightdm-webkit/themes
+      remote_src: yes
+ 
+  - name: Move foo to bar
+    command: mv /usr/share/lightdm-webkit/themes/lightdm-webkit2-theme-glorious-2.0.5 /usr/share/lightdm-webkit/themes/glorious
+
   - name: Create lightdm config file
     become: yes
     copy:

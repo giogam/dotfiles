@@ -2,7 +2,7 @@
   - name: Ensure required packages are installed
     become: yes
     package:
-      name: xorg_packages
+      name: "{{ xorg_packages }}""
       state: latest
       update_cache: yes
   
